@@ -1,0 +1,136 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>翻頁電子書</title>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+            <style>
+                body { background: #1a1a1a; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+                /* 滑鼠移上去變小手，提示可以抓取 */
+                #book { width: 1000px; height: 707px; box-shadow: 0 0 50px rgba(0,0,0,0.5); cursor: grab; }
+                #book:active { cursor: grabbing; }
+                .page { width: 500px; height: 600px; background-color: white; background-size: contain; background-repeat: no-repeat; background-position: center; border: 1px solid #333; }
+            </style>
+        </head>
+        <body>
+        <div id="book">
+            <div style="background-image:url(flipbook_assets/page_000.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_001.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_002.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_003.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_004.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_005.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_006.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_007.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_008.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_009.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_010.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_011.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_012.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_013.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_014.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_015.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_016.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_017.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_018.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_019.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_020.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_021.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_022.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_023.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_024.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_025.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_026.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_027.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_028.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_029.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_030.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_031.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_032.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_033.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_034.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_035.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_036.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_037.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_038.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_039.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_040.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_041.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_042.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_043.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_044.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_045.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_046.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_047.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_048.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_049.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_050.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_051.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_052.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_053.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_054.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_055.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_056.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_057.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_058.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_059.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_060.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_061.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_062.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_063.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_064.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_065.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_066.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_067.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_068.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_069.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_070.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_071.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_072.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_073.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_074.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_075.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_076.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_077.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_078.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_079.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_080.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_081.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_082.jpg)" class="page"></div>
+    <div style="background-image:url(flipbook_assets/page_083.jpg)" class="page"></div>
+
+        </div>
+        <script>
+            $(window).ready(function() {
+                $('#book').turn({
+                    width: 1000,
+                    height: 707,
+                    autoCenter: true,
+                    gradients: true,
+                    acceleration: true,
+                    elevation: 100  // 讓頁角在滑鼠靠近時翹得更高，更容易抓取
+                });
+
+                // 點擊頁面邊緣也能翻頁
+                $("#book").bind("click", function(e) {
+                    var offset = $(this).offset();
+                    var relativeX = (e.pageX - offset.left);
+                    if (relativeX > 500) {
+                        $('#book').turn('next');
+                    } else {
+                        $('#book').turn('previous');
+                    }
+                });
+            });
+
+            // 鍵盤支援保持不變
+            $(window).bind('keydown', function(e) {
+                if (e.keyCode == 37) $('#book').turn('previous');
+                else if (e.keyCode == 39) $('#book').turn('next');
+            });
+        </script>
+        </body>
+        </html>
+        
