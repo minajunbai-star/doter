@@ -52,7 +52,8 @@ else:
         <div id="book">
         """
         for img in image_paths:
-            html_content += f'    <div style="background-image:url(flipbook_assets/{img})" class="page"></div>\n'
+            # 加入 ./ 確保 GitHub 能抓到相對路徑
+            html_pages += f'        <div style="background-image:url(./flipbook_assets/{img})" class="page"></div>\n'
         
         html_content += """
         </div>
@@ -101,4 +102,5 @@ $(window).on('load', function() {
         print(f"❌ 發生錯誤：{e}")
     finally:
         if os.path.exists(temp_pdf):
+
             os.remove(temp_pdf)
