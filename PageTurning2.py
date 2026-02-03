@@ -25,7 +25,7 @@ else:
         pages = convert_from_path(temp_pdf, dpi=150, poppler_path=poppler_bin)
         
         for i, page in enumerate(pages):
-            img_name = f"page_{i:03}.jpg"
+            img_name = f"page_{i:03}.jpg".lower()
             img_path = os.path.join(output_folder, img_name)
             page.save(img_path, "JPEG")
             image_paths.append(img_name)
