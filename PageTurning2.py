@@ -57,16 +57,21 @@ else:
         html_content += """
         </div>
         <script>
-            $(window).ready(function() {
-                $('#book').turn({
-                    width: 1000,
-                    height: 707,
-                    autoCenter: true,
-                    gradients: true,
-                    acceleration: true,
-                    elevation: 100  // 讓頁角在滑鼠靠近時翹得更高，更容易抓取
-                });
-
+            // 確保 jQuery 載入後再初始化
+$(window).on('load', function() {
+    if ($.isFunction($('#book').turn)) {
+        $('#book').turn({
+            width: 1000,
+            height: 707,
+            autoCenter: true,
+            gradients: true,
+            acceleration: true,
+            elevation: 100
+        });
+    } else {
+        console.error("Turn.js 未能正確載入！");
+    }
+});
                 // 點擊頁面邊緣也能翻頁
                 $("#book").bind("click", function(e) {
                     var offset = $(this).offset();
