@@ -7,34 +7,30 @@
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
             <style>
-                body { 
-                    background: #1a1a1a; 
-                    display: flex; 
-                    justify-content: center; 
-                    align-items: center; 
-                    min-height: 100vh; 
-                    margin: 0; 
-                    overflow: hidden; 
-                }
+                body { background: #1a1a1a; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+                
+                /* 修正：加入 visibility: hidden，防止載入時看到亂掉的頁面 */
                 #book { 
                     width: 1000px; 
                     height: 707px; 
-                    box-shadow: 0 0 50px rgba(0,0,0,0.8); 
+                    box-shadow: 0 0 50px rgba(0,0,0,0.5); 
                     cursor: grab; 
-                    display: none; /* 初始隱藏，避免載入時畫面跳動 */
+                    visibility: hidden; 
                 }
+                
                 #book:active { cursor: grabbing; }
+                
+                /* 修正：加入 position: absolute，防止圖片垂直堆疊撐開網頁 */
                 .page { 
                     width: 500px; 
                     height: 707px; 
                     background-color: white; 
-                    background-size: cover; 
+                    background-size: 100% 100%; 
                     background-repeat: no-repeat; 
-                    background-position: center;
-                    box-sizing: border-box;
+                    background-position: center; 
+                    border: 1px solid #333; 
+                    position: absolute; 
                 }
-                /* 移除邊框改用內陰影，減少翻頁時邊界的閃爍感 */
-                .page { box-shadow: inset 0 0 1px rgba(0,0,0,0.2); }
             </style>
         </head>
         <body>
@@ -118,45 +114,37 @@
 
         </div>
         <script>
-            $(document).ready(function() {
-                var book = $('#book');
-
-                // 檢查 turn 方法是否存在
-                if ($.isFunction(book.turn)) {
-                    book.turn({
+            $(window).on('load', function() {
+                if ($.isFunction($('#book').turn)) {
+                    $('#book').turn({
                         width: 1000,
                         height: 707,
                         autoCenter: true,
                         gradients: true,
                         acceleration: true,
-                        elevation: 50
+                        elevation: 100
                     });
-
-                    // 初始化完成後再顯示，解決「跳一下」的問題
-                    setTimeout(function() {
-                        book.fadeIn(400);
-                    }, 100);
+                    // 修正：初始化完成後再顯示
+                    $('#book').css('visibility', 'visible');
                 } else {
                     console.error("Turn.js 未能正確載入！");
-                    book.show(); // 至少讓它顯示
+                    $('#book').css('visibility', 'visible');
                 }
+            });
 
-                // 點擊翻頁邏輯
-                book.bind("click", function(e) {
-                    var offset = $(this).offset();
-                    var relativeX = (e.pageX - offset.left);
-                    if (relativeX > 500) {
-                        book.turn('next');
-                    } else {
-                        book.turn('previous');
-                    }
-                });
+            $("#book").bind("click", function(e) {
+                var offset = $(this).offset();
+                var relativeX = (e.pageX - offset.left);
+                if (relativeX > 500) {
+                    $('#book').turn('next');
+                } else {
+                    $('#book').turn('previous');
+                }
+            });
 
-                // 鍵盤翻頁
-                $(window).bind('keydown', function(e) {
-                    if (e.keyCode == 37) book.turn('previous');
-                    else if (e.keyCode == 39) book.turn('next');
-                });
+            $(window).bind('keydown', function(e) {
+                if (e.keyCode == 37) $('#book').turn('previous');
+                else if (e.keyCode == 39) $('#book').turn('next');
             });
         </script>
         </body>
