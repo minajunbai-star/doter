@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>醫師現場健檢｜Plant 彩虹砂 2026 全新登場</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.8;
+        }
+
+        .btn-hover-effect {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-hover-effect:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex items-center group">
+                    <img src="image/LOGO_RAINBOW CAT LITTER.svg" alt="Plant 彩虹砂 Logo"
+                        class="h-10 w-auto group-hover:opacity-80 transition-opacity">
+                </a>
+
+                <div class="hidden lg:flex space-x-10 text-sm font-bold text-gray-500 tracking-widest uppercase">
+                    <a href="index.html" class="hover:text-blue-600 transition">首頁</a>
+                    <a href="tech.html" class="hover:text-blue-600 transition">核心技術</a>
+                    <a href="market.html" class="hover:text-blue-600 transition">健康小知識</a>
+                    <a href="campaign.html" class="hover:text-blue-600 transition">活動流程</a>
+                </div>
+
+                <a href="clinic.html#registration"
+                    class="inline-flex items-center justify-center px-6 py-2.5 bg-[#2563EB] text-white rounded-full hover:bg-blue-700 transition-all duration-300 shadow-md group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 16l2 2 4-4" />
+                    </svg>
+
+                    <span class="text-base font-bold tracking-wide">立即報名健檢</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-44 pb-24 bg-gradient-to-br from-blue-600 to-blue-800 text-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 space-y-8 text-center lg:text-left">
+                    <span
+                        class="inline-block px-4 py-1.5 bg-white/20 rounded-full text-xs font-bold tracking-widest uppercase text-center lg:text-left">健康服務形象升級</span>
+                    <h1 class="text-5xl md:text-6xl font-black leading-tight italic">
+                        買一包彩虹砂，<br><span class="text-blue-200">換一份專業安心</span>
+                    </h1>
+                    <p class="text-xl text-blue-100 leading-relaxed max-w-xl">
+                        我們將專業診斷從醫院帶進門市。透過現場醫師諮詢與彩虹砂監測功能，填補居家照顧與醫療間的斷層。
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start text-lg">
+                        <a href="#registration"
+                            class="bg-white text-blue-700 px-10 py-4 rounded-full font-bold hover:bg-blue-50 transition shadow-2xl">前往登記報名</a>
+                        <a href="#schedule"
+                            class="bg-transparent border border-white/30 text-white px-10 py-4 rounded-full font-bold hover:bg-white/10 transition text-center lg:text-left">查看場次時間</a>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 relative">
+                    <div class="bg-white/10 p-4 rounded-[3rem] backdrop-blur-sm border border-white/20 shadow-2xl">
+                        <img src="image/cute.jpg" alt="可愛貓咪示意圖" class="w-full h-auto rounded-[2.5rem] object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h3 class="text-4xl font-black mb-4 italic text-gray-900">
+                健檢地點與方式
+            </h3>
+            <p class="text-gray-500 mb-16 text-lg font-medium italic underline decoration-blue-200 underline-offset-8">
+                慈愛動物醫院指定總院｜採預約制・依院所安排離峰時段
+            </p>
+
+            <!-- 三家總院 -->
+            <div class="grid md:grid-cols-3 gap-10">
+
+                <!-- 台北總院 -->
+                <div
+                    class="bg-white p-10 rounded-[40px] shadow-sm border border-gray-100 hover:shadow-xl transition-all text-center flex flex-col items-center">
+                    <span
+                        class="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                        台北總院
+                    </span>
+                    <h5 class="text-2xl font-bold my-6 text-gray-900">
+                        慈愛動物醫院 台北總院
+                    </h5>
+                    <p class="text-gray-600 mb-2 font-semibold">
+                        02-2556-3320
+                    </p>
+                    <p class="text-gray-500 leading-relaxed mb-6">
+                        103 臺北市大同區寧夏路 1 號
+                    </p>
+                    <a href="https://maps.app.goo.gl/zGkKS7wWfsjVr6M48" target="_blank"
+                        class="text-blue-600 font-bold hover:text-blue-800 transition-colors">
+                        查看 Google 地圖 →
+                    </a>
+                </div>
+
+                <!-- 台中總院 -->
+                <div
+                    class="bg-white p-10 rounded-[40px] shadow-sm border border-gray-100 hover:shadow-xl transition-all text-center flex flex-col items-center">
+                    <span
+                        class="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                        台中總院
+                    </span>
+                    <h5 class="text-2xl font-bold my-6 text-gray-900">
+                        慈愛動物醫院 台中總院
+                    </h5>
+                    <p class="text-gray-600 mb-2 font-semibold">
+                        04-2406-6688
+                    </p>
+                    <p class="text-gray-500 leading-relaxed mb-6">
+                        台中市大里區國光路一段 539 號
+                    </p>
+                    <a href="https://maps.app.goo.gl/wcAET2hB2HiX7Ydv6" target="_blank"
+                        class="text-blue-600 font-bold hover:text-blue-800 transition-colors">
+                        查看 Google 地圖 →
+                    </a>
+                </div>
+
+                <!-- 台南總院 -->
+                <div
+                    class="bg-white p-10 rounded-[40px] shadow-sm border border-gray-100 hover:shadow-xl transition-all text-center flex flex-col items-center">
+                    <span
+                        class="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                        台南總院
+                    </span>
+                    <h5 class="text-2xl font-bold my-6 text-gray-900">
+                        慈愛動物醫院 台南總院
+                    </h5>
+                    <p class="text-gray-600 mb-2 font-semibold">
+                        06-220-3166
+                    </p>
+                    <p class="text-gray-500 leading-relaxed mb-6">
+                        702 臺南市南區西門路一段 473 號
+                    </p>
+                    <a href="https://maps.app.goo.gl/d2s4g7rMQsfPgXqu7" target="_blank"
+                        class="text-blue-600 font-bold hover:text-blue-800 transition-colors">
+                        查看 Google 地圖 →
+                    </a>
+                </div>
+
+            </div>
+
+            <p class="mt-12 text-sm text-blue-600">
+                ※ 健檢採預約制，實際到院時間將於報名成功後另行通知
+            </p>
+        </div>
+    </section>
+
+
+
+    <section id="registration" class="py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+        <div class="bg-blue-50 rounded-[60px] p-12 md:p-20 border border-blue-100 relative overflow-hidden text-left">
+            <div class="relative z-10 text-center">
+                <h3 class="text-4xl font-bold text-gray-900 mb-8 leading-tight text-center">立即報名預約</h3>
+                <p class="text-gray-600 text-lg mb-12 leading-relaxed text-center">請填寫基本資料，送出後將直接完成健檢預約登記。</p>
+
+                <form
+                    action="https://docs.google.com/forms/d/e/1FAIpQLSeLPxi5Sn9uCg62l2JnK0qbbC0js29nWDlEpLpp3uht1kI9Tg/formResponse"
+                    method="POST" 
+                    target="hidden_iframe" 
+                    class="space-y-6" 
+                    onsubmit="submitted=true;">
+                    
+                    <div class="bg-white p-8 rounded-3xl shadow-sm space-y-6 text-left">
+                        <div>
+                            <label class="block text-sm font-bold text-blue-600 mb-2 uppercase tracking-widest">飼主姓名</label>
+                            <input type="text" name="entry.150841634" required class="w-full border-b-2 border-gray-100 py-3 outline-none focus:border-blue-500 transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-blue-600 mb-2 uppercase tracking-widest">聯絡電話</label>
+                            <input type="tel" name="entry.919383615" required class="w-full border-b-2 border-gray-100 py-3 outline-none focus:border-blue-500 transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-blue-600 mb-2 uppercase tracking-widest">預約院所</label>
+                            <select name="entry.1300944051" required class="w-full border-b-2 border-gray-100 py-3 outline-none focus:border-blue-500 transition bg-transparent text-gray-500">
+                                <option value="" disabled selected hidden>選擇慈愛動物醫院分院</option>
+                                <optgroup label="北部">
+                                    <option value="台北總院｜台北市大同區">台北總院（寧夏路）</option>
+                                    <option value="曼哈頓分院｜台北松山">曼哈頓分院（松山）</option>
+                                    <option value="大新分所｜桃園蘆竹">大新分所（桃園）</option>
+                                    <option value="新莊分所｜新北">新莊分所（新北）</option>
+                                </optgroup>
+                                <optgroup label="南部">
+                                    <option value="台南總院｜台南">台南總院</option>
+                                    <option value="仁德分院｜台南">仁德分院</option>
+                                    <option value="九如分院｜高雄">九如分院（高雄）</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-blue-600 mb-2 uppercase tracking-widest text-left">預約日期</label>
+                            <input type="date" name="entry.1234567890" required class="w-full border-b-2 text-gray-400 py-3 outline-none focus:border-blue-500 transition text-gray-500 text-left">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-blue-600 mb-2 uppercase tracking-widest text-left">預約時段</label>
+                            <select name="entry.9876543210" required class="w-full border-b-2 text-gray-400 py-3 outline-none focus:border-blue-500 transition bg-transparent text-gray-500 text-left">
+                                <option value="" disabled selected hidden>請選擇時段</option>
+                                <option value="10:30–11:30">10:30 – 11:30</option>
+                                <option value="14:30–15:30">14:30 – 15:30</option>
+                                <option value="15:30–16:30">15:30 – 16:30</option>
+                                <option value="17:00–18:00">17:00 – 18:00</option>
+                            </select>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-blue-600 mb-2 uppercase tracking-widest">發票號碼</label>
+                                <input type="text" name="entry.658985887" required class="w-full border-b-2 border-gray-100 py-3 outline-none focus:border-blue-500 transition text-gray-900">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-blue-600 mb-2 uppercase tracking-widest">消費金額</label>
+                                <input type="number" name="entry.1535976167" required class="w-full border-b-2 border-gray-100 py-3 outline-none focus:border-blue-500 transition text-gray-900">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-blue-600 text-white py-6 rounded-full font-bold text-xl shadow-2xl hover:bg-blue-700 transition-all flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-3"></i> 送出預約資料
+                        </button>
+                    </div>
+                </form>
+
+                <p class="mt-6 text-sm text-blue-600">※ 送出後資料將直接進入慈愛動物醫院健檢名單</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    var submitted = false;
+</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
+        onload="if(submitted) {alert('預約資料已送出！我們將由專人與您聯繫。'); window.location.reload();}">
+</iframe>
+
+    <footer class="py-16 bg-white border-t border-gray-100 text-center">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8 text-center">
+            <a href="campaign.html"
+                class="text-lg font-bold text-gray-500 hover:text-blue-600 transition flex items-center group">
+                <i class="fas fa-arrow-left mr-3 group-hover:-translate-x-2 transition-transform"></i> 返回活動流程
+            </a>
+            <div class="text-xs text-blue-600 font-bold uppercase tracking-widest">
+                <p class="text-gray-900 mb-2">Plant | Rainbow Cat Litter Activity</p>
+                © 2026 Plant Rainbow Cat Litter Project. All Rights Reserved.
+            </div>
+            <a href="roi.html"
+                class="text-lg font-bold text-blue-600 hover:text-blue-800 transition flex items-center group">
+                下一頁：商業預估 <i class="fas fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform"></i>
+            </a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
