@@ -3,24 +3,18 @@
         <html>
         <head>
             <meta charset="UTF-8">
+            <meta name="viewport" content="width=1000, user-scalable=no">
             <title>翻頁電子書</title>
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
             <style>
-                body { background: #1a1a1a; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-                
-                /* 修正：加入 visibility: hidden，防止載入時看到亂掉的頁面 */
+                body { background: #1a1a1a; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
                 #book { 
                     width: 1000px; 
                     height: 707px; 
                     box-shadow: 0 0 50px rgba(0,0,0,0.5); 
-                    cursor: grab; 
                     visibility: hidden; 
                 }
-                
-                #book:active { cursor: grabbing; }
-                
-                /* 修正：加入 position: absolute，防止圖片垂直堆疊撐開網頁 */
                 .page { 
                     width: 500px; 
                     height: 707px; 
@@ -115,8 +109,9 @@
         </div>
         <script>
             $(window).on('load', function() {
-                if ($.isFunction($('#book').turn)) {
-                    $('#book').turn({
+                var $book = $('#book');
+                if ($.isFunction($book.turn)) {
+                    $book.turn({
                         width: 1000,
                         height: 707,
                         autoCenter: true,
@@ -124,22 +119,19 @@
                         acceleration: true,
                         elevation: 100
                     });
-                    // 修正：初始化完成後再顯示
-                    $('#book').css('visibility', 'visible');
-                } else {
-                    console.error("Turn.js 未能正確載入！");
-                    $('#book').css('visibility', 'visible');
+                    // 初始化後再顯示，解決跳動問題
+                    setTimeout(function() {
+                        $book.css('visibility', 'visible');
+                    }, 100);
                 }
             });
 
             $("#book").bind("click", function(e) {
                 var offset = $(this).offset();
                 var relativeX = (e.pageX - offset.left);
-                if (relativeX > 500) {
-                    $('#book').turn('next');
-                } else {
-                    $('#book').turn('previous');
-                }
+                // 修正座標判定：不受縮放干擾
+                if (relativeX > 500) $('#book').turn('next');
+                else $('#book').turn('previous');
             });
 
             $(window).bind('keydown', function(e) {
